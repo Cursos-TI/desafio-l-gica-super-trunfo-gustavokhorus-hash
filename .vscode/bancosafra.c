@@ -5,7 +5,10 @@
 
         
         //Menu
+        printf("Menu Banco Safra\n");
+        printf("\n");
         printf("Escolha uma opção:\n");
+        printf("\n");
         printf("1. Verificar saldo\n");
         printf("2. Fazer depósito\n");
         printf("3. Fazer saque\n");
@@ -47,8 +50,11 @@
                         printf("Fatura paga com sucesso!\n");
                         printf("Novo saldo: R$ %.2f", nsaldo);
                     } else {
-                        printf("Desculpe. Outras modalidades indísponíveis no momento.\n");
+                        printf("Desculpe. Outras modalidades indisponíveis no momento.\n");
+                        printf("Outras opções de pagamento em desenvolvimento. Desculpe.\n");
                     }
+                } else {
+                    printf("Tudo bem! Qualquer dúvida nosso time de atendimento está disponível 24 horas.\n");
                 }
             break;
             default:
