@@ -29,13 +29,14 @@
             printf("Digite o valor a sacar\n");
             scanf("%f", &vsaque);
 
-            saldo = saldo - vsaque; // subtrai o valor sacado do saldo
-
             if(vsaque > saldo){ //Caso valor do saque seja maior que o saldo
                 printf("Saldo insuficiente\n");// aparece a mensagem
-            } else{// se o saldo estiver no limite vai para a proxima linha
+            } else if(vsaque <= 0){
+                printf("Valor inválido.\n");
+            } else {// se o saldo estiver no limite vai para a proxima linha
+            saldo = saldo - vsaque; // subtrai o valor sacado do saldo
             printf("Valor retirado com sucesso!\n");
-            printf("Seu novo saldo é de: %.2f", saldo);
+            printf("Seu novo saldo é de: %.2f\n", saldo);
             }
             break;
             case 4:
