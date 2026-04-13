@@ -32,7 +32,7 @@
             saldo = saldo - vsaque; // subtrai o valor sacado do saldo
 
             if(vsaque > saldo){ //Caso valor do saque seja maior que o saldo
-                printf("Saldo insuficiente");// aparece a mensagem
+                printf("Saldo insuficiente\n");// aparece a mensagem
             } else{// se o saldo estiver no limite vai para a proxima linha
             printf("Valor retirado com sucesso!\n");
             printf("Seu novo saldo é de: %.2f", saldo);
