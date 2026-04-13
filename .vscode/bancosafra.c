@@ -40,10 +40,12 @@
             break;
             case 4:
             printf("A fatura do seu cartão de crédito é: R$ %.2f\n",fatura);
-            printf("Deseja pagar agora? 1=SIM / 2=NÃO?\n");
+            printf("Deseja pagar agora?\n");
+            printf("1=SIM / 2=NÃO\n");
             scanf("%d", &faturapay);
                 if(faturapay == 1){
-                    printf("Deseja pagar usando o saldo da conta corrente? 1=SIM / 2=NÃO\n");
+                    printf("Deseja pagar usando o saldo da conta corrente?\n");
+                    printf("1=SIM / 2=NÃO\n");
                     scanf("%d", &oppagar);
                     if(oppagar == 1){
                         if(fatura > saldo){
