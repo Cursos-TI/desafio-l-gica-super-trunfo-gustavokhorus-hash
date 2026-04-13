@@ -1,7 +1,7 @@
 #include <stdio.h>
     int main(){
         int opcao, faturapay, oppagar;
-        float saldo = 3500, vsaque, nsaldo, fatura=1325.80;
+        float saldo = 3500, vsaque, fatura=780.93;
 
         
         //Menu
@@ -29,13 +29,13 @@
             printf("Digite o valor a sacar\n");
             scanf("%f", &vsaque);
 
-            nsaldo = saldo - vsaque; // subtrai o valor sacado do saldo
+            saldo = saldo - vsaque; // subtrai o valor sacado do saldo
 
             if(vsaque > saldo){ //Caso valor do saque seja maior que o saldo
                 printf("Saldo insuficiente");// aparece a mensagem
             } else{// se o saldo estiver no limite vai para a proxima linha
             printf("Valor retirado com sucesso!\n");
-            printf("Seu novo saldo é de: %.2f", nsaldo);
+            printf("Seu novo saldo é de: %.2f", saldo);
             }
             break;
             case 4:
@@ -46,9 +46,16 @@
                     printf("Deseja pagar usando o saldo da conta corrente? 1=SIM / 2=NÃO\n");
                     scanf("%d", &oppagar);
                     if(oppagar == 1){
-                        nsaldo = saldo - fatura;
+                        if(fatura > saldo){
+                            printf("Seu saldo é insuficiente para pagar a fatura.\n");
+                            printf("Seu saldo é de: R$ %.2f\n", saldo);
+                            printf("Entre em contato com o setor financeiro para negociar.\n");
+                        }
+                        else if(oppagar == 1){
+                        saldo = saldo - fatura;
                         printf("Fatura paga com sucesso!\n");
-                        printf("Novo saldo: R$ %.2f", nsaldo);
+                        printf("Novo saldo: R$ %.2f\n", saldo);
+                    }
                     } else {
                         printf("Desculpe. Outras modalidades indisponíveis no momento.\n");
                         printf("Outras opções de pagamento em desenvolvimento. Desculpe.\n");
